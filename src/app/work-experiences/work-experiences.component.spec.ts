@@ -1,6 +1,7 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 import { WorkExperiencesComponent } from './work-experiences.component';
 import { workExperiences } from './datasource/work-experiences';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 describe('WorkExperiencesComponent should', () => {
   let component: WorkExperiencesComponent;
@@ -8,7 +9,7 @@ describe('WorkExperiencesComponent should', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [WorkExperiencesComponent]
+      imports: [WorkExperiencesComponent, BrowserAnimationsModule]
     })
     .compileComponents();
     
@@ -23,13 +24,13 @@ describe('WorkExperiencesComponent should', () => {
 
   it('have company name', () => {
     // Arrange
-    const workExperience = workExperiences.at(0);
+    const workExperience = workExperiences[0];
     
     // Act
     const renderedComponent = fixture.nativeElement as HTMLElement;
     const renderedComponentText = renderedComponent.innerText;
 
     // Assert
-    expect(renderedComponent.textContent).toContain(workExperience?.companyName);
+    expect(renderedComponentText).toContain(workExperience?.companyName);
   });
 });
