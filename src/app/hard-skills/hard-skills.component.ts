@@ -14,6 +14,7 @@ import { HardSkillCategory } from './enums/hard-skill-category';
 export class HardSkillsComponent {
   backendSkills = hardSkills.filter(hardSkill => hardSkill.category == HardSkillCategory.Backend);
   frontendSkills = hardSkills.filter(hardSkill => hardSkill.category == HardSkillCategory.Frontend);
+  testingSkills = hardSkills.filter(hardSkill => hardSkill.category == HardSkillCategory.Testing);
   
   drop(event: CdkDragDrop<string[]>) {
     moveItemInArray(hardSkills, event.previousIndex, event.currentIndex);
