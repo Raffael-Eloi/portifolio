@@ -87,4 +87,26 @@ describe('HardSkillsComponent should', () => {
       expect(renderedComponentText).toContain(hardSkill.name);
     });
   });
+
+  it('create database section with title', () => {
+    const renderedComponent = fixture.nativeElement as HTMLElement;
+    const titles = renderedComponent.querySelectorAll('h3');
+    
+    let hasDatabaseTitle = false;
+    titles.forEach(title => {
+        if (title.textContent == "Database")
+          hasDatabaseTitle = true;
+    });
+    expect(hasDatabaseTitle).toBeTruthy();
+  });
+
+  it('create database section with hard skills', () => {
+    const renderedComponent = fixture.nativeElement as HTMLElement;
+    const renderedComponentText = renderedComponent.innerText;
+
+    const databaseSkills = hardSkills.filter(hardSkill => hardSkill.category == HardSkillCategory.Database);
+    databaseSkills.forEach(hardSkill => {
+      expect(renderedComponentText).toContain(hardSkill.name);
+    });
+  });
 });
