@@ -77,4 +77,14 @@ describe('HardSkillsComponent should', () => {
     });
     expect(hasTestingTitle).toBeTruthy();
   });
+
+  it('create testing section with hard skills', () => {
+    const renderedComponent = fixture.nativeElement as HTMLElement;
+    const renderedComponentText = renderedComponent.innerText;
+
+    const testingSkills = hardSkills.filter(hardSkill => hardSkill.category == HardSkillCategory.Testing);
+    testingSkills.forEach(hardSkill => {
+      expect(renderedComponentText).toContain(hardSkill.name);
+    });
+  });
 });
