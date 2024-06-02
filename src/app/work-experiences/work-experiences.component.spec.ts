@@ -33,4 +33,16 @@ describe('WorkExperiencesComponent should', () => {
     // Assert
     expect(renderedComponentText).toContain(workExperience?.companyName);
   });
+  
+  it('have position', () => {
+    // Arrange
+    const workExperience = workExperiences[0];
+    
+    // Act
+    const renderedComponent = fixture.nativeElement as HTMLElement;
+    const renderedComponentText = renderedComponent.innerText;
+
+    // Assert
+    expect(renderedComponentText).toContain(workExperience?.position);
+  });
 });
