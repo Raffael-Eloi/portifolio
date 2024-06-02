@@ -1,8 +1,7 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
-
 import { HardSkillsComponent } from './hard-skills.component';
 
-describe('HardSkillsComponent', () => {
+describe('HardSkillsComponent should', () => {
   let component: HardSkillsComponent;
   let fixture: ComponentFixture<HardSkillsComponent>;
 
@@ -17,7 +16,12 @@ describe('HardSkillsComponent', () => {
     fixture.detectChanges();
   });
 
-  it('should create', () => {
+  it('create', () => {
     expect(component).toBeTruthy();
+  });
+  
+  it('create backend section with title', () => {
+    const renderedComponent = fixture.nativeElement as HTMLElement;
+    expect(renderedComponent.querySelector('h3')?.textContent).toContain('Backend');
   });
 });
