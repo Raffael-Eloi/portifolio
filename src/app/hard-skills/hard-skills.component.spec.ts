@@ -55,4 +55,14 @@ describe('HardSkillsComponent should', () => {
     });
     expect(hasFrontendTitle).toBeTruthy();
   });
+
+  it('create frontend section with hard skills', () => {
+    const renderedComponent = fixture.nativeElement as HTMLElement;
+    const renderedComponentText = renderedComponent.innerText;
+
+    const frontendSkills = hardSkills.filter(hardSkill => hardSkill.category == HardSkillCategory.Frontend);
+    frontendSkills.forEach(hardSkill => {
+      expect(renderedComponentText).toContain(hardSkill.name);
+    });
+  });
 });
