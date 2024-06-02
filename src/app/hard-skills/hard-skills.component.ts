@@ -1,10 +1,7 @@
 import { Component } from '@angular/core';
 import {CdkDragDrop, moveItemInArray, CdkDrag, CdkDropList} from '@angular/cdk/drag-drop';
 import {MatChipsModule} from '@angular/material/chips';
-
-export interface HardSkill {
-  name: string
-}
+import { hardSkills } from './datasource/hard-skills';
 
 @Component({
   selector: 'app-hard-skills',
@@ -14,11 +11,9 @@ export interface HardSkill {
   styleUrl: './hard-skills.component.css'
 })
 export class HardSkillsComponent {
-  hardSkills: HardSkill[] = [
-    { name: 'C#'},
-    { name: '.NET'}
-  ];
+  hardSkills = hardSkills;
+  
   drop(event: CdkDragDrop<string[]>) {
-    moveItemInArray(this.hardSkills, event.previousIndex, event.currentIndex);
+    moveItemInArray(hardSkills, event.previousIndex, event.currentIndex);
   }
 }
