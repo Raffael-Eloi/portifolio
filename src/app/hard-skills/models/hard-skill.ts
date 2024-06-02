@@ -1,3 +1,6 @@
+import { HardSkillCategory } from "../enums/hard-skill-category";
+
 export interface HardSkill {
-    name: string
+    name: string,
+    category: HardSkillCategory
   }
