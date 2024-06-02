@@ -10,6 +10,9 @@
                 {{ workExperience.position }}
             </mat-panel-description>
             <mat-panel-description>
+                {{ getNameOfWorkMode(workExperience.mode) }}
+            </mat-panel-description>
+            <mat-panel-description>
                 {{ getExperiencePeriod(workExperience) }}
             </mat-panel-description>
         </mat-expansion-panel-header>

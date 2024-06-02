@@ -5,7 +5,7 @@ export const workExperiences: WorkExperience[] = [
     {
       companyName: 'Siteware',
       position: 'Software Engineer',
-      workMode: WorkMode.Remote,
+      mode: WorkMode.Remote,
       activitiesDescription: [
         'Development of solutions for monitoring a business management system to monitor corporate performance using the technologies of Azure, C#, .NET, SQL Server.',
         'Maintenance in the legacy codebase responsible for the corporate performance module.',
@@ -21,7 +21,7 @@ export const workExperiences: WorkExperience[] = [
     {
       companyName: 'Rehagro',
       position: 'Software Developer Trainee',
-      workMode: WorkMode.Remote,
+      mode: WorkMode.Remote,
       activitiesDescription: [
         'Development and maintenance of solutions conducted for soil, water, chemistry, NIRS and process analysis software, report issuance and laboratory management through a web system using PHP, Laravel as a Backend, JavaScript, Vue as a Frontend and PostgreSQL as the main database.'
       ],
@@ -31,7 +31,7 @@ export const workExperiences: WorkExperience[] = [
     {
       companyName: 'Rehagro',
       position: 'Software Developer Intern',
-      workMode: WorkMode.Remote,
+      mode: WorkMode.Remote,
       activitiesDescription: [
         'Complete creation from scratch of a service desk system for the internal use of the company\'s employees using PHP, Laravel as a Backend, JavaScript, React as a Frontend and MYSQL as the main database.'
       ],
@@ -41,7 +41,7 @@ export const workExperiences: WorkExperience[] = [
     {
       companyName: 'AgroSB',
       position: 'Infrastructure IT Intern',
-      workMode: WorkMode.InPerson,
+      mode: WorkMode.InPerson,
       activitiesDescription: [
         'Performed support activities for users in person and remotely through TeamViewer software, management of company assets through SysAid Software, maintenance on notebooks and computers, purchase or service requests and queries in Senior ERP and service calls through SysAid.'
       ],
