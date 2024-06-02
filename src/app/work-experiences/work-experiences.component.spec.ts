@@ -45,4 +45,18 @@ describe('WorkExperiencesComponent should', () => {
     // Assert
     expect(renderedComponentText).toContain(workExperience?.position);
   });
+  
+  it('have activies description', () => {
+    // Arrange
+    const workExperience = workExperiences[0];
+    
+    // Act
+    const renderedComponent = fixture.nativeElement as HTMLElement;
+    const renderedComponentText = renderedComponent.innerText;
+
+    // Assert
+    workExperience.activitiesDescription.forEach(activity => {
+      expect(renderedComponentText).toContain(activity);
+    });
+  });
 });
