@@ -88,7 +88,6 @@ describe('WorkExperiencesComponent should', () => {
   
   it('show present when does not have finish date', () => {
     // Arrange
-    const workExperience = workExperiences[0];
     
     // Act
     const renderedComponent = fixture.nativeElement as HTMLElement;
@@ -97,5 +96,19 @@ describe('WorkExperiencesComponent should', () => {
     // Assert
     const expectedFinishDate = "- Present";
     expect(renderedComponentText).toContain(expectedFinishDate);
+  });
+
+  it('have work mode', () => {
+    // Arrange
+    const inPerson = "In Person";
+    const remote = "Remote";
+
+    // Act
+    const renderedComponent = fixture.nativeElement as HTMLElement;
+    const renderedComponentText = renderedComponent.innerHTML;
+
+    // Assert
+    expect(renderedComponentText).toContain(inPerson);
+    expect(renderedComponentText).toContain(remote);
   });
 });
