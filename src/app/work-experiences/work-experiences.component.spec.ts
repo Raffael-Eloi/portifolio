@@ -59,4 +59,16 @@ describe('WorkExperiencesComponent should', () => {
       expect(renderedComponentText).toContain(activity);
     });
   });
+  
+  it('have start date', () => {
+    // Arrange
+    const workExperience = workExperiences[0];
+    
+    // Act
+    const renderedComponent = fixture.nativeElement as HTMLElement;
+    const renderedComponentText = renderedComponent.innerHTML;
+
+    // Assert
+    expect(renderedComponentText).toContain(workExperience?.startDate.toLocaleDateString());
+  });
 });
