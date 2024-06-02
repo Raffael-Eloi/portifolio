@@ -9,6 +9,9 @@
             <mat-panel-description>
                 {{ workExperience.position }}
             </mat-panel-description>
+            <mat-panel-description>
+                {{ workExperience.startDate.toLocaleDateString() }}
+            </mat-panel-description>
         </mat-expansion-panel-header>
         <ul>
             <li *ngFor="let activity of workExperience.activitiesDescription">
