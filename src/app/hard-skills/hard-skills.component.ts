@@ -17,6 +17,7 @@ export class HardSkillsComponent {
   frontendSkills = hardSkills.filter(hardSkill => hardSkill.category == HardSkillCategory.Frontend);
   testingSkills = hardSkills.filter(hardSkill => hardSkill.category == HardSkillCategory.Testing);
   databaseSkills = hardSkills.filter(hardSkill => hardSkill.category == HardSkillCategory.Database);
+  devopsSkills = hardSkills.filter(hardSkill => hardSkill.category == HardSkillCategory.DevOps);
   
   drop(event: CdkDragDrop<string[]>) {
     moveItemInArray(hardSkills, event.previousIndex, event.currentIndex);
