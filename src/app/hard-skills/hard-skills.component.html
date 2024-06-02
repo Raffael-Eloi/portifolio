@@ -1,8 +1,10 @@
+<h3>Backend</h3>
+
 <mat-chip-set
   cdkDropList
   cdkDropListOrientation="horizontal"
   (cdkDropListDropped)="drop($event)">
-  @for (hardSkill of hardSkills; track hardSkill) {
+  @for (hardSkill of backendSkills; track hardSkill) {
     <mat-chip cdkDrag>{{ hardSkill.name }}</mat-chip>
   }
 </mat-chip-set>
