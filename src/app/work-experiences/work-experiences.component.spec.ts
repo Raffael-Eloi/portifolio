@@ -52,7 +52,7 @@ describe('WorkExperiencesComponent should', () => {
     
     // Act
     const renderedComponent = fixture.nativeElement as HTMLElement;
-    const renderedComponentText = renderedComponent.innerText;
+    const renderedComponentText = renderedComponent.innerHTML;
 
     // Assert
     workExperience.activitiesDescription.forEach(activity => {

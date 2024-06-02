@@ -8,5 +8,10 @@
                 {{ workExperience.position }}
             </mat-panel-description>
         </mat-expansion-panel-header>
+        <ul>
+            <li *ngFor="let activity of workExperience.activitiesDescription">
+                {{ activity }}
+            </li>
+        </ul>
     </mat-expansion-panel>
 </mat-accordion>
