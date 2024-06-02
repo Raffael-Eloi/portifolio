@@ -1,8 +1,8 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
-
 import { WorkExperiencesComponent } from './work-experiences.component';
+import { workExperiences } from './datasource/work-experiences';
 
-describe('WorkExperiencesComponent', () => {
+describe('WorkExperiencesComponent should', () => {
   let component: WorkExperiencesComponent;
   let fixture: ComponentFixture<WorkExperiencesComponent>;
 
@@ -17,7 +17,19 @@ describe('WorkExperiencesComponent', () => {
     fixture.detectChanges();
   });
 
-  it('should create', () => {
+  it('create', () => {
     expect(component).toBeTruthy();
+  });
+
+  it('have company name', () => {
+    // Arrange
+    const workExperience = workExperiences.at(0);
+    
+    // Act
+    const renderedComponent = fixture.nativeElement as HTMLElement;
+    const renderedComponentText = renderedComponent.innerText;
+
+    // Assert
+    expect(renderedComponent.textContent).toContain(workExperience?.companyName);
   });
 });
