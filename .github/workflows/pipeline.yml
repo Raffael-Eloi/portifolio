@@ -19,9 +19,10 @@ jobs:
 
     - name: Setup project
       uses: actions/checkout@v4
-    - run: npm install -g @angular/cli@latest
-    - run: ng analytics disable
-    - run: npm install
+    - run: |
+        npm install -g @angular/cli@latest
+        ng analytics disable
+        npm install
 
   tests:
    name: Unit Tests
@@ -31,4 +32,7 @@ jobs:
    steps:
     - name: Checkout code
       uses: actions/checkout@v4
-    - run: npm run test
+    - run: |
+        ls
+        ng v
+        npm run test
