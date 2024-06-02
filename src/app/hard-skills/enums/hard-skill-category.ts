@@ -1,4 +1,5 @@
 export enum HardSkillCategory {
+    None,
     Backend,
     Frontend,
     Testing,

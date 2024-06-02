@@ -2,8 +2,11 @@ import { Component } from '@angular/core';
 import {CdkDragDrop, moveItemInArray, CdkDrag, CdkDropList} from '@angular/cdk/drag-drop';
 import {MatChipsModule} from '@angular/material/chips';
 import { hardSkills } from './datasource/hard-skills';
-import { HardSkillCategory } from './enums/hard-skill-category';
 import { NgFor } from '@angular/common';
+import IGetCategoryName from './contracts/i-get-category-name';
+import GetCategoryName from './services/get-category-name';
+import { HardSkillsByCategory } from './models/hard-skills-by-category';
+import { HardSkill } from './models/hard-skill';
 
 @Component({
   selector: 'app-hard-skills',
@@ -12,15 +15,45 @@ import { NgFor } from '@angular/common';
   templateUrl: './hard-skills.component.html',
   styleUrl: './hard-skills.component.css'
 })
-export class HardSkillsComponent {
-  backendSkills = hardSkills.filter(hardSkill => hardSkill.category == HardSkillCategory.Backend);
-  frontendSkills = hardSkills.filter(hardSkill => hardSkill.category == HardSkillCategory.Frontend);
-  testingSkills = hardSkills.filter(hardSkill => hardSkill.category == HardSkillCategory.Testing);
-  databaseSkills = hardSkills.filter(hardSkill => hardSkill.category == HardSkillCategory.Database);
-  devopsSkills = hardSkills.filter(hardSkill => hardSkill.category == HardSkillCategory.DevOps);
-  architectureSkills = hardSkills.filter(hardSkill => hardSkill.category == HardSkillCategory.Architecture);
-  engineeringConceptsSkills = hardSkills.filter(hardSkill => hardSkill.category == HardSkillCategory.EngineeringConcepts);
+export class HardSkillsComponent { 
+  getCategoryName: IGetCategoryName;
+  hardSkillsByCategory: HardSkillsByCategory;
+  categories: string[] = [];
   
+  constructor() {
+    this.getCategoryName = new GetCategoryName();
+    this.hardSkillsByCategory = {};
+    
+    this.initializeHardSkills();
+    
+    this.initializeCategories();
+  }
+
+  initializeHardSkills() {
+    hardSkills.forEach(hardSkill => {
+      if (this.CategoryWasNotInitialized(hardSkill)) 
+        this.hardSkillsByCategory[hardSkill.category] = [];
+
+      this.AddHardSkill(hardSkill);
+    });
+  }
+
+  private CategoryWasNotInitialized(hardSkill: HardSkill) {
+    return !this.hardSkillsByCategory[hardSkill.category];
+  }
+
+  private AddHardSkill(hardSkill: HardSkill) {
+    this.hardSkillsByCategory[hardSkill.category].push(hardSkill);
+  }
+
+  private initializeCategories() {
+    this.categories = Object.keys(this.hardSkillsByCategory);
+  }
+
+  getName(category: string): string {
+    return this.getCategoryName.get(Number(category));
+  }
+
   drop(event: CdkDragDrop<string[]>) {
     moveItemInArray(hardSkills, event.previousIndex, event.currentIndex);
   }
