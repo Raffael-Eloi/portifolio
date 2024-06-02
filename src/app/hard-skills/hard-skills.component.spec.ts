@@ -109,4 +109,26 @@ describe('HardSkillsComponent should', () => {
       expect(renderedComponentText).toContain(hardSkill.name);
     });
   });
+  
+  it('create devops section with title', () => {
+    const renderedComponent = fixture.nativeElement as HTMLElement;
+    const titles = renderedComponent.querySelectorAll('h3');
+    
+    let hasdevopsTitle = false;
+    titles.forEach(title => {
+        if (title.textContent == "DevOps")
+          hasdevopsTitle = true;
+    });
+    expect(hasdevopsTitle).toBeTruthy();
+  });
+
+  it('create devops section with hard skills', () => {
+    const renderedComponent = fixture.nativeElement as HTMLElement;
+    const renderedComponentText = renderedComponent.innerText;
+
+    const devopsSkills = hardSkills.filter(hardSkill => hardSkill.category == HardSkillCategory.DevOps);
+    devopsSkills.forEach(hardSkill => {
+      expect(renderedComponentText).toContain(hardSkill.name);
+    });
+  });
 });
