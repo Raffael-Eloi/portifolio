@@ -64,13 +64,13 @@
   }
 </mat-chip-set>
 
-<h3>Engineering concepts</h3>
+<h3>Engineering Concepts</h3>
 
 <mat-chip-set
   cdkDropList
   cdkDropListOrientation="horizontal"
   (cdkDropListDropped)="drop($event)">
-  @for (hardSkill of architectureSkills; track hardSkill) {
+  @for (hardSkill of engineeringConceptsSkills; track hardSkill) {
     <mat-chip cdkDrag>{{ hardSkill.name }}</mat-chip>
   }
 </mat-chip-set>
