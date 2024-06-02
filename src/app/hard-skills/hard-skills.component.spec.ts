@@ -1,5 +1,7 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 import { HardSkillsComponent } from './hard-skills.component';
+import { hardSkills } from './datasource/hard-skills';
+import { HardSkillCategory } from './enums/hard-skill-category';
 
 describe('HardSkillsComponent should', () => {
   let component: HardSkillsComponent;
@@ -23,5 +25,15 @@ describe('HardSkillsComponent should', () => {
   it('create backend section with title', () => {
     const renderedComponent = fixture.nativeElement as HTMLElement;
     expect(renderedComponent.querySelector('h3')?.textContent).toContain('Backend');
+  });
+
+  it('create backend section with hard skills', () => {
+    const renderedComponent = fixture.nativeElement as HTMLElement;
+    const renderedComponentText = renderedComponent.innerText;
+
+    const backendSkills = hardSkills.filter(hardSkill => hardSkill.category == HardSkillCategory.Backend);
+    backendSkills.forEach(hardSkill => {
+      expect(renderedComponentText).toContain(hardSkill.name);
+    });
   });
 });
