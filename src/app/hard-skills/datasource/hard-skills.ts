@@ -38,11 +38,11 @@ export const hardSkills: HardSkill[] = [
     { name: 'Specflow', category: HardSkillCategory.Testing },
     { name: 'Unit Testing', category: HardSkillCategory.Testing },
     
-    { name: 'OOP', category: HardSkillCategory.EngineerConcepts },
-    { name: 'SOLID', category: HardSkillCategory.EngineerConcepts },
-    { name: 'TDD', category: HardSkillCategory.EngineerConcepts },
-    { name: 'BDD', category: HardSkillCategory.EngineerConcepts },
-    { name: 'DDD', category: HardSkillCategory.EngineerConcepts },
+    { name: 'OOP', category: HardSkillCategory.EngineeringConcepts },
+    { name: 'SOLID', category: HardSkillCategory.EngineeringConcepts },
+    { name: 'TDD', category: HardSkillCategory.EngineeringConcepts },
+    { name: 'BDD', category: HardSkillCategory.EngineeringConcepts },
+    { name: 'DDD', category: HardSkillCategory.EngineeringConcepts },
     
     { name: 'Microservices', category: HardSkillCategory.Architecture },
     { name: 'Monolith', category: HardSkillCategory.Architecture },

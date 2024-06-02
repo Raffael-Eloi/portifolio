@@ -136,12 +136,12 @@ describe('HardSkillsComponent should', () => {
     const renderedComponent = fixture.nativeElement as HTMLElement;
     const titles = renderedComponent.querySelectorAll('h3');
     
-    let hasarchitectureTitle = false;
+    let hasArchitectureTitle = false;
     titles.forEach(title => {
         if (title.textContent == "Architecture")
-          hasarchitectureTitle = true;
+          hasArchitectureTitle = true;
     });
-    expect(hasarchitectureTitle).toBeTruthy();
+    expect(hasArchitectureTitle).toBeTruthy();
   });
 
   it('create architecture section with hard skills', () => {
@@ -150,6 +150,28 @@ describe('HardSkillsComponent should', () => {
 
     const architectureSkills = hardSkills.filter(hardSkill => hardSkill.category == HardSkillCategory.Architecture);
     architectureSkills.forEach(hardSkill => {
+      expect(renderedComponentText).toContain(hardSkill.name);
+    });
+  });
+
+  it('create engineering concepts section with title', () => {
+    const renderedComponent = fixture.nativeElement as HTMLElement;
+    const titles = renderedComponent.querySelectorAll('h3');
+    
+    let hasEngineeringConceptsTitle = false;
+    titles.forEach(title => {
+        if (title.textContent == "Engineering Concepts")
+          hasEngineeringConceptsTitle = true;
+    });
+    expect(hasEngineeringConceptsTitle).toBeTruthy();
+  });
+
+  it('create engineering concepts section with hard skills', () => {
+    const renderedComponent = fixture.nativeElement as HTMLElement;
+    const renderedComponentText = renderedComponent.innerText;
+
+    const engineeringConceptsSkills = hardSkills.filter(hardSkill => hardSkill.category == HardSkillCategory.EngineeringConcepts);
+    engineeringConceptsSkills.forEach(hardSkill => {
       expect(renderedComponentText).toContain(hardSkill.name);
     });
   });

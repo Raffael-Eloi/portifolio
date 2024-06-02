@@ -5,5 +5,5 @@ export enum HardSkillCategory {
     Database,
     DevOps,
     Architecture,
-    EngineerConcepts
+    EngineeringConcepts
 }
