@@ -19,4 +19,22 @@ export class WorkExperiencesComponent {
     this.workExperiences = workExperiences;
     this.panelOpenState = false;
   }
+
+  getExperiencePeriod(experience: WorkExperience): string {
+    const startDate = this.getStartDate(experience);
+    const finishDate = this.getFinishDate(experience);
+
+    return `${startDate} - ${finishDate}`;
+  }
+
+  private getStartDate(experience: WorkExperience): string {
+    return experience.startDate.toLocaleDateString();
+  }
+
+  private getFinishDate(experience: WorkExperience): string {
+    if (experience.finishDate)
+      return experience.finishDate.toLocaleDateString();
+
+    return "Present";
+  }
 }

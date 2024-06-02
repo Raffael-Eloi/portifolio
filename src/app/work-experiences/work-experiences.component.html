@@ -10,9 +10,7 @@
                 {{ workExperience.position }}
             </mat-panel-description>
             <mat-panel-description>
-                {{ workExperience.startDate.toLocaleDateString() }} 
-                - 
-                {{ workExperience.finishDate?.toLocaleDateString()}}
+                {{ getExperiencePeriod(workExperience) }}
             </mat-panel-description>
         </mat-expansion-panel-header>
         <ul>
