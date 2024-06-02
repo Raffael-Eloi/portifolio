@@ -71,4 +71,18 @@ describe('WorkExperiencesComponent should', () => {
     // Assert
     expect(renderedComponentText).toContain(workExperience?.startDate.toLocaleDateString());
   });
+  
+  it('have finish date', () => {
+    // Arrange
+    const workExperience = workExperiences[1];
+    
+    // Act
+    const renderedComponent = fixture.nativeElement as HTMLElement;
+    const renderedComponentText = renderedComponent.innerHTML;
+
+    // Assert
+    const finishDate = workExperience?.finishDate?.toLocaleDateString();
+    const expectedFinishDate = `- ${finishDate!}`;
+    expect(renderedComponentText).toContain(expectedFinishDate);
+  });
 });
