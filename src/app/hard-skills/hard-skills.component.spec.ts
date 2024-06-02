@@ -24,7 +24,14 @@ describe('HardSkillsComponent should', () => {
   
   it('create backend section with title', () => {
     const renderedComponent = fixture.nativeElement as HTMLElement;
-    expect(renderedComponent.querySelector('h3')?.textContent).toContain('Backend');
+    const titles = renderedComponent.querySelectorAll('h3');
+
+    let hasBackendTitle = false;
+    titles.forEach(title => {
+        if (title.textContent == "Backend")
+          hasBackendTitle = true;
+    });
+    expect(hasBackendTitle).toBeTruthy();
   });
 
   it('create backend section with hard skills', () => {
@@ -35,5 +42,17 @@ describe('HardSkillsComponent should', () => {
     backendSkills.forEach(hardSkill => {
       expect(renderedComponentText).toContain(hardSkill.name);
     });
+  });
+
+  it('create frontend section with title', () => {
+    const renderedComponent = fixture.nativeElement as HTMLElement;
+    const titles = renderedComponent.querySelectorAll('h3');
+    
+    let hasFrontendTitle = false;
+    titles.forEach(title => {
+        if (title.textContent == "Frontend")
+          hasFrontendTitle = true;
+    });
+    expect(hasFrontendTitle).toBeTruthy();
   });
 });
