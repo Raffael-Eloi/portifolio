@@ -18,6 +18,7 @@ jobs:
         node-version: '22.2.0'
 
     - name: Setup project
+      uses: actions/checkout@v4
     - run: npm install -g @angular/cli@latest
     - run: ng analytics disable
     - run: npm install
