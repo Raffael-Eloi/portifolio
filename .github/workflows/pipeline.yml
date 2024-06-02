@@ -34,4 +34,6 @@ jobs:
       uses: actions/checkout@v4
     - run: |
         npm install -g @angular/cli@latest
+        ng analytics disable
+        npm install
         npm run test
