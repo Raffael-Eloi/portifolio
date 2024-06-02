@@ -1,9 +1,10 @@
 <div *ngFor="let category of categories">
-  <h3>{{ getName(category) }}</h3>
+  <h5>{{ getName(category) }}</h5>
   <mat-chip-set 
     cdkDropList 
     cdkDropListOrientation="horizontal" 
     (cdkDropListDropped)="drop($event)"
+    class="hard-skill-item"
   >
     @for (hardSkill of hardSkillsByCategory[category]; track hardSkill) {
       <mat-chip cdkDrag>
