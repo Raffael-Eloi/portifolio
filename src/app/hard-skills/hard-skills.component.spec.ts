@@ -131,4 +131,26 @@ describe('HardSkillsComponent should', () => {
       expect(renderedComponentText).toContain(hardSkill.name);
     });
   });
+  
+  it('create architecture section with title', () => {
+    const renderedComponent = fixture.nativeElement as HTMLElement;
+    const titles = renderedComponent.querySelectorAll('h3');
+    
+    let hasarchitectureTitle = false;
+    titles.forEach(title => {
+        if (title.textContent == "Architecture")
+          hasarchitectureTitle = true;
+    });
+    expect(hasarchitectureTitle).toBeTruthy();
+  });
+
+  it('create architecture section with hard skills', () => {
+    const renderedComponent = fixture.nativeElement as HTMLElement;
+    const renderedComponentText = renderedComponent.innerText;
+
+    const architectureSkills = hardSkills.filter(hardSkill => hardSkill.category == HardSkillCategory.Architecture);
+    architectureSkills.forEach(hardSkill => {
+      expect(renderedComponentText).toContain(hardSkill.name);
+    });
+  });
 });
