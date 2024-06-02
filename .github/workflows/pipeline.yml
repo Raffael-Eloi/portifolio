@@ -36,4 +36,4 @@ jobs:
         npm install -g @angular/cli@latest
         ng analytics disable
         npm install
-        npm run test
+        npm run test -- --watch=false --browsers=ChromeHeadless
