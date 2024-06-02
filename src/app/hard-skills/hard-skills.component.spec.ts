@@ -65,4 +65,16 @@ describe('HardSkillsComponent should', () => {
       expect(renderedComponentText).toContain(hardSkill.name);
     });
   });
+
+  it('create testing section with title', () => {
+    const renderedComponent = fixture.nativeElement as HTMLElement;
+    const titles = renderedComponent.querySelectorAll('h3');
+    
+    let hasTestingTitle = false;
+    titles.forEach(title => {
+        if (title.textContent == "Testing")
+          hasTestingTitle = true;
+    });
+    expect(hasTestingTitle).toBeTruthy();
+  });
 });
