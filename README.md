@@ -1,27 +1,33 @@
-# Portifolio
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 18.0.2.
+# Portfolio
 
-## Development server
+## Purpose
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+The aim of this project was to familiarize myself with Angular's syntax, components, and overall structure. <br> 
+Additionally, it provided an opportunity to practice Test-Driven Development (TDD) with Angular, leveraging various libraries to enhance my skill set. <br>
+I also implemented a Continuous Integration/Continuous Deployment (CI/CD) pipeline to streamline the development process.
 
-## Code scaffolding
+## Versions
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+| Technology | Version |
+|------------|---------|
+| Angular    | 18.0.2  |
+| Node       | 20.0.2  |
 
-## Build
+## Concepts Used
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+- **Test-Driven Development (TDD)**: Applied for designing and developing the application.
+- **SOLID Principles**: Ensured separation of concerns within the application and its components.
+- **Atomic Design**: Adopted for organizing and structuring the project efficiently.
+- **CI/CD Pipeline**: Integrated to automate testing, building, and deployment processes.
 
-## Running unit tests
+## You can access the site [here](https://portifolio-raffaelelois-projects.vercel.app/)
+
+## How to Run the project
+
+1. Run `ng serve` for a development server.
+2. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any source files.
+
+## Running Unit Tests
 
 Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
-
-## Running end-to-end tests
-
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
