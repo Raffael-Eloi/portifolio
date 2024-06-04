@@ -69,4 +69,16 @@ describe('EducationComponent should', () => {
     const link = renderedComponent.querySelector("a");
     expect(link?.href).toBe(education!.institutionLink);
   });
+  
+  it('have start date', () => {
+    // Arrange
+    const education = educations.at(0);
+    
+    // Act
+    const renderedComponent = fixture.nativeElement as HTMLElement;
+    const renderedComponentText = renderedComponent.innerText;
+    
+    // Assert
+    expect(renderedComponentText).toContain(education!.startDate.toLocaleDateString());
+  });
 });
