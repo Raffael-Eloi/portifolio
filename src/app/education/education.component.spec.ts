@@ -64,9 +64,9 @@ describe('EducationComponent should', () => {
     
     // Act
     const renderedComponent = fixture.nativeElement as HTMLElement;
-    const renderedComponentText = renderedComponent.innerText;
-
+    
     // Assert
-    expect(renderedComponentText).toContain(education!.institutionLink);
+    const link = renderedComponent.querySelector("a");
+    expect(link?.href).toBe(education!.institutionLink);
   });
 });
