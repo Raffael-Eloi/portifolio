@@ -2,6 +2,7 @@ import { ComponentFixture, TestBed } from '@angular/core/testing';
 import { HardSkillsComponent } from './hard-skills.component';
 import { hardSkills } from './datasource/hard-skills';
 import { HardSkillCategory } from './enums/hard-skill-category';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 describe('HardSkillsComponent should', () => {
   let component: HardSkillsComponent;
@@ -9,7 +10,7 @@ describe('HardSkillsComponent should', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [HardSkillsComponent]
+      imports: [HardSkillsComponent, BrowserAnimationsModule]
     })
     .compileComponents();
     
@@ -24,7 +25,7 @@ describe('HardSkillsComponent should', () => {
   
   it('create backend section with title', () => {
     const renderedComponent = fixture.nativeElement as HTMLElement;
-    const titles = renderedComponent.querySelectorAll('h5');
+    const titles = renderedComponent.querySelectorAll('.category');
 
     let hasBackendTitle = false;
     titles.forEach(title => {
@@ -46,7 +47,7 @@ describe('HardSkillsComponent should', () => {
 
   it('create frontend section with title', () => {
     const renderedComponent = fixture.nativeElement as HTMLElement;
-    const titles = renderedComponent.querySelectorAll('h5');
+    const titles = renderedComponent.querySelectorAll('.category');
     
     let hasFrontendTitle = false;
     titles.forEach(title => {
@@ -68,7 +69,7 @@ describe('HardSkillsComponent should', () => {
 
   it('create testing section with title', () => {
     const renderedComponent = fixture.nativeElement as HTMLElement;
-    const titles = renderedComponent.querySelectorAll('h5');
+    const titles = renderedComponent.querySelectorAll('.category');
     
     let hasTestingTitle = false;
     titles.forEach(title => {
@@ -90,7 +91,7 @@ describe('HardSkillsComponent should', () => {
 
   it('create database section with title', () => {
     const renderedComponent = fixture.nativeElement as HTMLElement;
-    const titles = renderedComponent.querySelectorAll('h5');
+    const titles = renderedComponent.querySelectorAll('.category');
     
     let hasDatabaseTitle = false;
     titles.forEach(title => {
@@ -112,7 +113,7 @@ describe('HardSkillsComponent should', () => {
   
   it('create devops section with title', () => {
     const renderedComponent = fixture.nativeElement as HTMLElement;
-    const titles = renderedComponent.querySelectorAll('h5');
+    const titles = renderedComponent.querySelectorAll('.category');
     
     let hasdevopsTitle = false;
     titles.forEach(title => {
@@ -134,7 +135,7 @@ describe('HardSkillsComponent should', () => {
   
   it('create architecture section with title', () => {
     const renderedComponent = fixture.nativeElement as HTMLElement;
-    const titles = renderedComponent.querySelectorAll('h5');
+    const titles = renderedComponent.querySelectorAll('.category');
     
     let hasArchitectureTitle = false;
     titles.forEach(title => {
@@ -156,7 +157,7 @@ describe('HardSkillsComponent should', () => {
 
   it('create engineering concepts section with title', () => {
     const renderedComponent = fixture.nativeElement as HTMLElement;
-    const titles = renderedComponent.querySelectorAll('h5');
+    const titles = renderedComponent.querySelectorAll('.category');
     
     let hasEngineeringConceptsTitle = false;
     titles.forEach(title => {

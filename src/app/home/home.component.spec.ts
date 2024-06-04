@@ -1,5 +1,6 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 import { HomeComponent } from './home.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 describe('HomeComponent should', () => {
   let component: HomeComponent;
@@ -7,7 +8,7 @@ describe('HomeComponent should', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [HomeComponent]
+      imports: [HomeComponent, BrowserAnimationsModule]
     })
     .compileComponents();
     
