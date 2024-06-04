@@ -1,7 +1,7 @@
 <p class="title">Work experiences</p>
 
 <mat-accordion *ngFor="let workExperience of workExperiences">
-    <mat-expansion-panel (opened)="panelOpenState = true" (closed)="panelOpenState = false">
+    <mat-expansion-panel (opened)="panelOpenState = true" (closed)="panelOpenState = false" class="panel">
         <mat-expansion-panel-header>
             <mat-panel-title>
                 {{ workExperience.companyName }}

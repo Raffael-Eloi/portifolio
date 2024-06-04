@@ -1,13 +1,7 @@
-.header-menu {
-    width: 25%;
-}
-
 .header {
     display: flex;
     align-items: center;
-    gap: 10rem;
-}
-
-.header-name {
-    width: 75%;
+    justify-content: center;
+    background-color: #d7e3ff;
+    margin-bottom: 1rem;
 }
