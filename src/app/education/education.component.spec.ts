@@ -33,4 +33,16 @@ describe('EducationComponent should', () => {
     expect(renderedComponentText).toContain("Bachelor");
     expect(renderedComponentText).toContain("Post Graduation");
   });
+  
+  it('have subject', () => {
+    // Arrange
+    const education = educations.at(0);
+    
+    // Act
+    const renderedComponent = fixture.nativeElement as HTMLElement;
+    const renderedComponentText = renderedComponent.innerText;
+
+    // Assert
+    expect(renderedComponentText).toContain(education!.subject);
+  });
 });
