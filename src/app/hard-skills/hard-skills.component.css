@@ -1,3 +1,13 @@
+.title {
+    text-align: center;
+    font-size: x-large;
+}
+
 .hard-skill-item {
     margin-bottom: 1rem;
+    margin-left: 1rem;
+}
+
+.category {
+    margin-left: 1rem;
 }

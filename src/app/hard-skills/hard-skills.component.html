@@ -1,5 +1,7 @@
+<p class="title">Hard Skills</p>
+
 <div *ngFor="let category of categories">
-  <h5>{{ getName(category) }}</h5>
+  <p class="category">{{ getName(category) }}</p>
   <mat-chip-set 
     cdkDropList 
     cdkDropListOrientation="horizontal" 
