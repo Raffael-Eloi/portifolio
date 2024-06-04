@@ -45,4 +45,16 @@ describe('EducationComponent should', () => {
     // Assert
     expect(renderedComponentText).toContain(education!.subject);
   });
+  
+  it('have institution', () => {
+    // Arrange
+    const education = educations.at(0);
+    
+    // Act
+    const renderedComponent = fixture.nativeElement as HTMLElement;
+    const renderedComponentText = renderedComponent.innerText;
+
+    // Assert
+    expect(renderedComponentText).toContain(education!.institution);
+  });
 });
