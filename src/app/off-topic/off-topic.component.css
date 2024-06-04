@@ -1,0 +1,29 @@
+.title {
+    text-align: center;
+    font-size: x-large;
+    margin-bottom: 2rem;
+}
+
+.off-topic-box {
+    display: flex; 
+    align-items: center; 
+    justify-content: space-around
+}
+
+.off-topic-img {
+    display: flex;
+}
+
+.off-topic-description {
+    width: 50%;
+}
+
+img {
+    max-width:100%;
+    max-height:100%;
+}
+
+.image-item {
+    height: 250px;
+    width: 250px;
+}
