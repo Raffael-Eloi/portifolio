@@ -44,6 +44,10 @@ The purpose of this project was to:
 
 Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
 
+## How to run in Docker container ![container_3306292 (1)](https://github.com/Raffael-Eloi/portifolio/assets/51720161/24342f12-912e-4cce-815e-40d0470249fb)
+
+```docker-compose up -d```
+
 ## Project Structure 📁
 
 Here's a brief overview of the project structure:
